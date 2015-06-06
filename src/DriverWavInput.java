@@ -17,7 +17,8 @@ public class DriverWavInput {
     
     /*Sampler takes a Sampleable object, such as a recording device or stored WAV file*/
     /* For testing only */
-    Sampleable storedWavFile = new ReadDummyWave("./testwav/forecariah_susu.wav");
+    Sampleable storedWavFile = new ReadDummyWave("./testwav/susu-ui-prompts.wav");
+    
     Sampler sampler = new Sampler(storedWavFile);
     
     /*Segmenter finds speech segments using a sampler*/
@@ -25,17 +26,9 @@ public class DriverWavInput {
     Segmenter segmenter = new SimpleSegmenter(sampler);
     
     // Push-to-talk
-    System.out.print("Press Enter to start recording...");
-    System.in.read();
+    //System.out.print("Press Enter to start recording...");
+    //System.in.read();
     RecordContext.startAll();
-  }
-  
-  public static void sleep(int seconds) {
-    long i;
-    seconds = seconds * 3;
-    while(seconds-- > 0) {
-      i = 0; while(i < 1000000000) { i++; }
-    }
   }
   
 }

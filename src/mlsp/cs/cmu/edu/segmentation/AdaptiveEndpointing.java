@@ -8,9 +8,9 @@ public class AdaptiveEndpointing implements SegmentStrategy {
 
   private Double BACKGROUND_ENERGY = 0.0;
   
-  private Double onsetThreshold = 15.0;
+  private Double onsetThreshold = 10.0;
 
-  private Double forgetFactor = 1.5;
+  private Double forgetFactor = 3.0;
 
   private Double adjustment = 0.1;
   

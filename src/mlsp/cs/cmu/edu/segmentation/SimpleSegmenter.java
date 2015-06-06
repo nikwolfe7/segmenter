@@ -2,10 +2,6 @@ package mlsp.cs.cmu.edu.segmentation;
 
 import mlsp.cs.cmu.edu.audio.AudioFormatMono16BitPCM16kHz;
 import mlsp.cs.cmu.edu.audio.RecordContext;
-import mlsp.cs.cmu.edu.features.AudioFeatureExtractor;
-import mlsp.cs.cmu.edu.features.FeatureExtractor;
-import mlsp.cs.cmu.edu.filters.PreEmphasis;
-import mlsp.cs.cmu.edu.filters.RemoveDCOffset;
 import mlsp.cs.cmu.edu.sampling.FrameSequence;
 
 /**
@@ -21,9 +17,9 @@ public class SimpleSegmenter extends Segmenter {
 
   private int SILENCE_STRING_CUTOFF = 3000; // assumes 10ms frame
 
-  private int SPEECH_SEGMENT_CUTOFF = 65;
+  private int SPEECH_SEGMENT_CUTOFF = 50;
 
-  private int frameBackoff = 15;
+  private int frameBackoff = 10;
 
   private int speechStart = 0;
 
@@ -107,8 +103,8 @@ public class SimpleSegmenter extends Segmenter {
 
   @Override
   protected void runFeatureExtraction() {
-    FeatureExtractor extractor = new AudioFeatureExtractor(this);
-    extractor.start();
+    //FeatureExtractor extractor = new AudioFeatureExtractor(this);
+    //extractor.start();
   }
 
 }

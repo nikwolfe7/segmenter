@@ -9,7 +9,7 @@ public class DoubleThresholdEndpointing implements SegmentStrategy {
 
   private Double BACKGROUND_ENERGY = 0.0;
 
-  private Double threshold = 1.3;
+  private Double threshold = 1.05;
 
   private Double belowThreshold = 0.95;
 
